@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link rel="stylesheet" href="weather.css" />
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script src="key.js"></script>
+  </head>
+  <body>
+    <ons-page>
+        <ons-toolbar>
+          <div class="center">Weather Assistant</div>
+        </ons-toolbar>
+        <section class="section">
+          <ons-input id="txtCity" modifier="material underbar" placeholder="City Name" style="width: 50%" class="clearance" float>
+          </ons-input>
+          <ons-list style="width: 50%" class="clearance">
+            <ons-list-header>Settings</ons-list-header>
+            <ons-list-item>
+                <div class="center">Temperature</div>
+                <div class="right">F°&nbsp;<ons-switch id="swtTemp" modifier="material" checked></ons-switch>&nbsp;C°&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            </ons-list-item>
+            <ons-list-item>
+                <div class="center">Wind</div>
+                <div class="right">mph&nbsp;<ons-switch id="swtWind" modifier="material" checked></ons-switch>&nbsp;km/h</div>
+            </ons-list-item>
+            
+          </ons-list>
+          
+          <ons-button modifier="large" id="btnWeather">Get Weather</ons-button>
+        </section>
+        <section class="section" id="result"></section>
+        
+        <ons-modal direction="up">
+          <div style="text-align: center">
+            <p>
+              <ons-icon icon="md-spinner" size="28px" spin></ons-icon> Loading...
+            </p>
+          </div>
+        </ons-modal>
+    </ons-page>
+      <script src="weather.js"></script>
+  </body>
+</html>
